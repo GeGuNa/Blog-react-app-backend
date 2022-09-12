@@ -1,13 +1,19 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const db = require('./db.js')
+
 
 const qport = 8269;
 
 app.use(cors())
 
 
-app.get('/', (req,res) => {
+app.get('/', async(req,res) => {
+
+
+//const qcat = await db('category').where("id",">",0);
+//console.log(qcat)
 
 res.write(`test`)
 
