@@ -42,5 +42,17 @@ res.end()
 });
 
 
+page.get('/viewed', async(req, res) => {
+
+const qd = await db('posts').select('title','id','views').where('views','>','0').orderBy('views','desc').limit(6);
+
+res.json(qd)
+
+res.end()
+
+});
+
+
+
 
 module.exports = page;
