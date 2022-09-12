@@ -5,5 +5,10 @@ just a first step was taken ...
 
 open Terminal and put there 
 
-##if you want to start application 
-npm start   
+## Setup
+
+To run this project:
+
+```
+npm start
+```
