@@ -2,12 +2,17 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const db = require('./db.js')
+const page = require('./pages.js')
 
 
 const qport = 8269;
 
 app.use(cors())
+app.use(express.json())
 
+
+
+app.use('/data', page);
 
 app.get('/', async(req,res) => {
 
