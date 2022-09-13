@@ -20,7 +20,7 @@ res.end()
 page.get('/list', async(req, res) => {
 
 //const qd = await db('posts');
-const qd = await db('posts').where('id','>', 0);
+const qd = await db('posts').where('id','>', 0).orderBy('id','desc');
 
 res.json(qd)
 
@@ -44,7 +44,7 @@ res.end()
 
 page.get('/viewed', async(req, res) => {
 
-const qd = await db('posts').select('title','id','views').where('views','>','0').orderBy('views','desc').limit(6);
+const qd = await db('posts').select('*').where('views','>','0').orderBy('views','desc').limit(6);
 
 res.json(qd)
 
