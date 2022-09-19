@@ -30,5 +30,6 @@ views bigint,
 likes bigint,
 when_posted bigint,
 customer bigint references Persons(id),
-cat bigint references Category(id)
+cat bigint references Category(id),
+fileaddr text default ''
 ); 

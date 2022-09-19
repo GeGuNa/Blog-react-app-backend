@@ -6,11 +6,7 @@ const db = require('./db.js')
 
 page.get('/', async(req, res) => {
 
-//const qd = await db('category');
-const qd = await db('category').where('id','>', 0);
-
-
-res.json(qd)
+res.write(`index`)
 
 res.end()
 });

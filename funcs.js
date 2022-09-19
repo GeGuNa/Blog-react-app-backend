@@ -52,7 +52,15 @@ function Timestamp(){
 }
 
 
-const qz = Timestamp()
+function Is_number(id) {
+
+var cidck =  /^[0-9]+$/	
+	
+return cidck.test(id)
+}
+
+
+//const qz = Timestamp()
 
 
 //module.exports = { ifImage, Timestamp, Unix_timestamp }
@@ -66,5 +74,5 @@ const qz = Timestamp()
 
 
 module.exports = { 
-ifImage, Timestamp, IfImg
+ifImage, Timestamp, IfImg, Is_number
 }
