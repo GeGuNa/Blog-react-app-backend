@@ -33,6 +33,41 @@ res.end()
 
 
 
+
+app.get('/post/:id', async(req,res) => {
+
+var cid = Math.round(parseInt(req.params.id));
+
+if (Is_number(cid)) {
+
+const cntifxsts = await db('posts').where({id: cid}).first();
+
+if (!cntifxsts) {
+	
+	return res.status(200).send({status:'error_post'})
+	
+} else {
+	
+	
+const cqid = await db('posts').where({id: cid});
+	
+
+return res.status(200).send(cqid)		
+
+}
+	
+} else {
+	
+res.status(200).send(`it must be number `)	
+}
+
+
+
+res.end()
+});
+
+
+
 app.get('/cat/:id', async(req,res) => {
 
 var cid = Math.round(parseInt(req.params.id));
@@ -134,7 +169,7 @@ const qda222 = new Date().getTime()
 
 const qz221  = Math.floor(Math.random()*10000)+1
 
-const QzFlNm = `{$qz221}_${qda222}_${Filen.name}`
+const QzFlNm = `${qz221}_${qda222}_${Filen.name}`
 
 
 if (qztype) { 
